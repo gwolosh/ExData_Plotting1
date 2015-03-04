@@ -33,7 +33,8 @@ Only the data from 2007-02-01 and 2007-02-02 were used.
 
 PrepData.R - this script downloads the data, if necessary, and uses grep() to
 load the correct dates. The script also creates a new column, datetime. The
-correct dataframe is returned.
+correct dataframe is returned. The dataframe is also saved as a file which can
+be loaded quickly.
 
 ## Making Plots
 

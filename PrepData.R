@@ -8,6 +8,7 @@
 
 getData <- function(){
     if (! file.exists("data")) {dir.create("data")}
+    curdir<-getwd()
     setwd("data")
     if (! file.exists("household_power_consumption.txt")) {
         url<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
@@ -20,5 +21,7 @@ getData <- function(){
     pd<-read.csv(tf, na.strings=c("?"), sep=";")
     unlink(tf)
     pd$datetime<-strptime(paste(as.Date(pd$Date , "%d/%m/%Y"), pd$Time, sep=" "), "%Y-%m-%d %H:%M:%S")
+    saveRDS(pd, "power.rds")
+    setwd(curdir)
     return(pd)
 }

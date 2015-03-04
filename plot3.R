@@ -1,13 +1,15 @@
-
 #############################################################
 #
 # plot3.R create the histogram plot
 #
 #############################################################
-
-# Prep the data for the pple
-source("PrepData.R")
-power<-getData()
+# Get the data for the plot
+if (file.exists("data/power.RDS")) {
+        power<-readRDS("data/power.RDS")
+} else {
+        source("PrepData.R")
+    power<-getData()
+}
 # Create png device
 png(filename = "plot3.png", width = 480, height = 480)
 # Plot
