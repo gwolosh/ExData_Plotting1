@@ -37,7 +37,8 @@ correct dataframe is returned.
 
 ## Making Plots
 
-Each of the scripts, plot1.R, plot2.R... generate the respective plots.
+Each of the scripts, plot1.R, plot2.R, plot3.R and plot4.R call PrepData.R to
+load the dataframe. After the data is loaded the correct plot is generated.
 
 ### Plot 1 -- Reference
 
